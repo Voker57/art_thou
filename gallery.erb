@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+  <head>
+    <title><% gallery_title %> Bitcheese Pictures</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="<%= root %>/static/nbl.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel='alternate' type='application/atom+xml' title='All updates' href='<%=root%>/art_thou.xml' />
+    <link rel='alternate' type='application/atom+xml' title='Gallery updates' href='index.xml' />
+  </head>
+  <body>
+  <table width='100%'>
+  	<tr>
+  	<td style='border-width:inherit'>
+  	<a href="<%=root%>">root</a> /
+  	<% ar = gallery_path.dup; nar = []%>
+  	<% until ar.empty? %>
+  	<% nar << ar.pop %>
+  	<a href="<%= root + "/" + nar.join("/")%>"><%=nar.last%></a>
+  	/
+  	<% end %>
+  	</td>
+  	<td style='text-align:right; border-width:inherit'>
+  	[ no Python ]
+  	[ no AJAX ]
+  	[ no bullshit ]
+  	</td>
+  	</tr>
+  </table>
+    
+    
+    <h1> <a href="<%= gallery_url %>"><%= gallery_title %></a> </h1>
+
+<%= gallery_description %>
+
+<%= gallery_previews %>
+
+<hr style="clear:both" />
+
+<%= image_previews %>
+  </body>
+</html>
